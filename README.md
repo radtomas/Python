@@ -1,7 +1,7 @@
 # Python
 
 ## Description
-Repository with different python programs too small to be a separate projects.
+Repository with different Python 3.5 programs too small to be a separate projects.
 
 ## License
 
