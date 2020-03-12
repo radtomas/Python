@@ -211,5 +211,6 @@ dmypy.json
 # End of https://www.gitignore.io/api/git,python,pycharm+all
 
 #### custom
-algorithms_visualization/env
+env
 .idea/*
+.python-version

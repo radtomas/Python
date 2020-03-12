@@ -4,17 +4,17 @@ poczta@radtomas.pl
 """
 
 
-def merge(left_array, right_array):
+def _merge(left_array, right_array):
     """
     Merge function which merge two subarrays
     left_array - left piece of main array
     right_array - right piece of main array
     """
-
-    # temp array
     temp_array = []
+    right_len = len(right_array)
+    left_len = len(left_array)
 
-    while len(left_array) != 0 and len(right_array) != 0:
+    while left_len != 0 and right_len != 0:
         if left_array[0] < right_array[0]:
             temp_array.append(left_array[0])
             left_array.remove(left_array[0])
@@ -22,7 +22,7 @@ def merge(left_array, right_array):
             temp_array.append(right_array[0])
             right_array.remove(right_array[0])
 
-    if len(left_array) == 0:
+    if left_len == 0:
         temp_array += right_array
     else:
         temp_array += left_array
@@ -35,14 +35,15 @@ def merge_sort(array):
     Sort function using merge sort algorithm.
     array - unsorted array
     """
+    array_len = len(array)
 
-    if len(array) > 1:
-        mid = len(array) // 2
+    if array_len > 1:
+        mid = array_len // 2
 
         # Sort left and right halves
         left_array = merge_sort(array[:mid])
         right_array = merge_sort(array[mid:])
-        return merge(left_array, right_array)
+        return _merge(left_array, right_array)
     else:
         return array
 
